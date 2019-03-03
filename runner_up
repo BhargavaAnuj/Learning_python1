@@ -1,0 +1,27 @@
+Find the Runner-Up Score
+Given list is[2 3 6 6 5] . The maximum score is , second maximum is . Hence, we print  as the runner-up score.
+
+if __name__ == '__main__':
+    n = int(input())
+    arr = map(int, input().split())
+    #print(max(arr))
+    a = list(arr)
+    a.sort(reverse=True)
+    # print(a)
+    max1=a[0]
+    maximum=[]
+    min1=a[len(a)-1]
+    # print(min1)
+    minumum=[]
+
+    for i in a:
+        if i < max1:
+            maximum.append(i)
+        
+    for i in a:
+        if i > min1:
+            minumum.append(i)
+
+    
+    print(max(maximum))
+    # print(min(minumum))
