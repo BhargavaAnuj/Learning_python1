@@ -1,0 +1,14 @@
+# num to str 123 --> one two three
+
+input_value = input("insert here: ")
+dict={
+    "1":"one",
+    "2":"Two",
+    "3":"Three",
+    "4":"Four"
+       
+}
+
+for i in input_value:
+  if i in dict:
+    print(dict[i], end=" ")
