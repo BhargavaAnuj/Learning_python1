@@ -1,0 +1,7 @@
+import pandas as pd
+data = pd.read_excel('RBI specific.xlsx', sheet_name=None, header=None)
+print(data['Sheet1'])
+
+dataf=data['Sheet1']
+dataf.loc[3,1]
+
