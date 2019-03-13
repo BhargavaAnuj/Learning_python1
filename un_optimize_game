@@ -1,0 +1,44 @@
+'''
+In the second case we have a[0]=2,a[1]=1. We can convert 2 a[0] into 1 a[1]  and then finally (1+1=2), a[1] into 1 a[2] . 
+Thus, the final array shall be :[0,0,1] . Hence, the answer is 1.
+
+name = input()                  # Reading input from STDIN
+print('Hi, %s.' % name)         # Writing output to STDOUT
+
+# Warning: Printing unwanted or ill-formatted data to output will cause the test cases to fail
+
+'''
+
+# Write your code here
+test_case=int(input())
+for i in range(test_case):
+    n = int(input())
+        
+    arr=[int(x) for x in input().strip().split()]
+    power=0
+    num=0
+    # a = [1,2,3]
+    l=len(arr)
+    for i in range(l):
+      val=(2**i)*arr[i]
+      if arr[i]>1:
+    #   print(val)
+        if val%2==0:
+          num=val
+    
+          while num >= 2:
+      #       count+=1
+      #       print(num)
+            num=num//2
+      #       print(num)
+            power+=1
+    #     print(power,l)
+        if power >=l:
+          arr.insert(power,0)
+        arr[power]=arr[power]+1
+      #   print(arr[power])
+        arr[i]=0
+        power=0
+    #     print(arr)
+          
+    print(sum(arr))
