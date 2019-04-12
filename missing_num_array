@@ -1,0 +1,27 @@
+#Print the missing number in array
+#code
+test = int (input().strip())
+for i in range(test):
+    arr_size=input().strip().split(" ")
+    arr=[int(k) for k in input().strip().split(" ")]
+    l=len(arr)
+    k=int(arr_size[0])
+    # print(k)
+    previous_element=arr[0]
+    sum=int(k * (k+1))/2
+    # print(sum)
+    sum1=0
+    missing_num=0
+      
+      
+    for i in range(l):
+        sum1=int(sum1+arr[i])
+        
+        
+    if(sum > sum1):
+        missing_num=sum-sum1
+    print(int(missing_num))
+            
+            
+        
+    
