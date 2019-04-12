@@ -1,0 +1,16 @@
+# for each test case print the sorted array
+
+#code
+
+test = int (input().strip())
+max_ending_here=0
+sum_so_far=0
+count=[]
+l=0
+for i in range(test):
+    count=input().strip().split(" ")
+    arr=[int(k) for k in input().strip().split(" ")]
+    l=len(arr)
+    arr.sort()
+    arr = [str(i) for i in arr]
+    print(" ".join(list(arr)))
