@@ -1,0 +1,56 @@
+#code
+#unoptimized
+test=int(input().strip())
+for i in range(test):
+    count=input().strip().split(" ")
+    arr=[int(k) for k in input().strip().split(" ")]
+    l=len(arr)
+    flag=0
+    if(l==1):
+        flag=1
+        print("1")
+    else:
+        for i in range(1,l-1):
+            if(sum(arr[0:i])==sum(arr[i+1:])):
+                print(str(i+1))
+                flag=1
+        if(flag!=1):
+            if(sum(arr[:l-1])==0):
+                print(str(l))
+                flag=1
+        if(flag!=1):
+            if(sum(arr[1:])==0):
+                flag=1
+                print(str(1))
+    if(flag==0):
+        print(str(-1))
+        
+        
+#code
+#optimized
+test=int(input().strip())
+for i in range(test):
+    count=input().strip().split(" ")
+    arr=[int(k) for k in input().strip().split(" ")]
+    l=len(arr)
+    left_sum , right_sum = 0,0
+    flag=0
+    if(l==1):
+        flag=1
+        print("1")
+    else:
+        right_sum = sum(arr[1:])
+        if(right_sum==0):
+            flag=1
+            print(str(1))
+        else:
+            for i in range(1,l):
+                right_sum-=arr[i]
+                left_sum+=arr[i-1]
+                if(right_sum==left_sum):
+                    flag=1
+                    # print("got the result")
+                    print(str(i+1))
+    if(flag==0):
+        print("-1")
+            
