@@ -49,7 +49,31 @@ for i in range(t):
         print("-1")
 
   
+#code 2 
+#Keep on adding elements in current_sum till its less than the given sum.
+#If it becomes greater than given sum, start subtracting elements from the start of the array till its greater than given sum.
+
+currSum = arr[0];
+start=0;
+end=0;
+while (end < arr.length)
+{
+    if (currSum == givenSum)
+    {
+        print ("Found given sum from " + start + " to " + end);
+    }
     
-    
+    if (currSum <= givenSum)
+    {
+        end++;
+        if (end < arr.length)
+            currSum = currSum + arr[end];
+    }
+    else
+    {
+        currSum = currSum - arr[start];
+        start++;
+    }
+}
 
 
