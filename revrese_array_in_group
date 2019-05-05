@@ -1,0 +1,47 @@
+
+#code
+#prob : Given an array arr[] of positive integers of size N. Reverse every sub-array of K group elements.
+#Input
+/*1
+5 3
+1 2 3 4 5
+
+Output
+3 2 1 5 4 */
+
+
+test = int (input().strip())
+l=0
+for i in range(test):
+    count=input().strip().split(" ")
+    c=count[1]
+    d=int(c,10)
+    arr=[int(k) for k in input().strip().split(" ")]
+    l = len(arr)
+    # print(l)
+    temp=[]
+    
+    b=[]
+    temp1=[]
+    #1 2 3 4 5
+    a= l//d
+    # print(a)
+    if a > 0:
+        
+        for i in range(a):
+            b=arr[i*d:i*d+d]
+            b.sort(reverse=True)
+            temp+=b
+        temp1=arr[a*d:]
+        # print(temp1)
+        temp1.sort(reverse=True)
+        temp+=temp1
+        print(' '.join(map(str, temp)))
+    else:
+        arr.sort(reverse=True)
+    # print(temp)
+        print(' '.join(map(str, arr)))  
+        
+        
+        
+    
