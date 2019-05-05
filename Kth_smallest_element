@@ -1,0 +1,20 @@
+#Given an array arr and a number K where K is smaller than size of array,
+#the task is to find the K’th smallest element in the given array. It is given that all array elements are distinct.
+
+
+#code
+
+test = int (input().strip())
+l=0
+for i in range(test):
+    count=input().strip()
+    # c=count[1]
+    # d=int(c,10)
+    arr=[int(k) for k in input().strip().split(" ")]
+    size=input().strip()
+    d=int(size)
+    # print(d)
+    arr.sort()
+    # print(arr)
+    print(arr[d-1])
+    
