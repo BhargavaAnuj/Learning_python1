@@ -1,0 +1,79 @@
+# an array of integers, write a function that returns true if there is a triplet (a, b, c) that satisfies a2 + b2 = c
+
+#code
+#3 2 4 6 5
+c=[]
+# Flag=False
+def Triplet(arr,n):
+    for i in range(n):
+        arr[i] = (arr[i]*arr[i])
+        
+    arr.sort()
+    # print(c)
+    
+    for i in range(n-1,1, -1):
+        j = 0
+        k = i - 1
+        
+        while (j < k):
+            if (arr[j] + arr[k] == arr[i]):
+                return True
+            else:
+                if (arr[j] +arr[k] < arr[i]):
+                    j = j + 1
+                else:
+                    k = k - 1
+                
+    return False
+
+
+def Triplets(ar, n): 
+    # Square all the elemennts 
+    for i in range(n): 
+        ar[i] = ar[i] * ar[i] 
+  
+    # sort array elements 
+    ar.sort() 
+  
+    # fix one element 
+    # and find other two 
+    # i goes from n - 1 to 2 
+    for i in range(n-1, 1, -1): 
+        # start two index variables from  
+        # two corners of the array and  
+        # move them toward each other 
+        j = 0
+        k = i - 1
+        while (j < k): 
+            # A triplet found 
+            if (ar[j] + ar[k] == ar[i]): 
+                return True
+            else: 
+                if (ar[j] + ar[k] < ar[i]): 
+                    j = j + 1
+                else: 
+                    k = k - 1
+    # If we reach here, then no triplet found 
+    return False
+
+    
+
+
+
+test=int(input().strip())
+for i in range(test):
+    count=input().strip().split(" ")
+    arr=[int(k) for k in input().strip().split(" ")]
+    n=len(arr)
+    
+    if (Triplet(arr, n)):
+        print("Yes")
+    else:
+        print("No")
+    # print("c value is ", triplet(arr, n)) 
+
+    
+
+
+    
+
