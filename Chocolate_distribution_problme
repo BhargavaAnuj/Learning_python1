@@ -1,0 +1,59 @@
+#code
+
+
+test=int(input().strip())
+
+for i in range(test):
+    arr_size=input().strip().split(" ")
+    arr=[int(i) for i in input().strip().split(" ")]
+    student= input().strip().split(" ")
+    c=student[0]
+    d=int(c,10)
+    l=len(arr)
+    arr.sort()
+    
+    start=0
+    end=d-1
+    lt=[]
+
+    
+    
+    while end < l:
+        lt.append(arr[end] - arr[start])  # store the difference of max and min of given student size arr
+        end = end + 1
+        start= start + 1
+    
+    
+    
+    print(min(lt))
+
+    
+    
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    
+    
+    
+    
+    
+    
+    
+    
+    
