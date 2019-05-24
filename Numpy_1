@@ -1,0 +1,16 @@
+#adding 5 in each element of list
+#size of list
+#type of vector 
+
+
+import sys 
+import numpy as np
+
+lst = [1,2,3,4]
+arr = np.array(lst)
+print(arr + 5)
+print(arr.nbytes)
+
+lst1 = [1, 2, 3, 'text', True, 3+2j] 
+arr1 = np.array(lst1)
+print(type(arr1[0]),type(arr1[4]), type(arr1[5]))
