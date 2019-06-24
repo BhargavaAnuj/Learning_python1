@@ -1,0 +1,75 @@
+#code
+
+import requests , csv, json
+
+for i in range(1,301):
+  url="https://pokeapi.co/api/v2/pokemon/" + str(i)
+  res= requests.get(url)
+  data = res.json()
+#   print(type(data))
+
+  # print(data)
+  # print(data.keys())
+  # 'base_experience', 'forms', 'game_indices', 'height', 'held_items', 'id', 'is_default',
+  # 'location_area_encounters', 'moves', 'name', 'order', 'species', 'sprites', 'stats', 'types', 'weight'
+  
+ #individual printing 
+  
+  
+#   print("id", data['id'])
+#   print("name", data['name'])
+#   print("data", data['order'])
+#   print("height", data['height'])
+#   print("wt", data['weight'])
+#   print("base_exp", data['base_experience'])
+# #   print(data['types'])
+#   print("slots", data['types'][0]['slot'])
+#   print("lenght", len(data['types']))
+#   print(data['types'][0]['type']['name'])
+  header=['ID','NAME','DATA','HEIGHT','Weight','BASE_EXP','SLOT_1','SLOT_2','moves']
+  if(len(data['types'])==1 and data['types'][0]['slot']==2):
+    roww=[data['id'],data['name'],data['order'],data['height'],data['weight'],data['base_experience'],data['types'][0]['type']['name'],'',len(data['moves']) ]
+#   print("slot2", data['types'][0]['type']['name'])
+  elif(len(data['types'])==1 and data['types'][0]['slot']==1):
+    roww=[data['id'],data['name'],data['order'],data['height'],data['weight'],data['base_experience'],'',data['types'][0]['type']['name'],len(data['moves'])] 
+#   print("slot1", data['types'][0]['type']['name'])
+  else:
+    roww=[data['id'],data['name'],data['order'],data['height'],data['weight'],data['base_experience'],data['types'][1]['type']['name'],data['types'][0]['type']['name'],len(data['moves'])]
+  csvfile=open('persons.csv','w', newline='')
+  obj=csv.writer(csvfile)
+#   csvwriter.writerow(header)
+  obj.writerow(header)
+  obj.writerow(roww)
+  csvfile.close()
+#   header=['ID','NAME','DATA','HEIGHT','Weight','BASE_EXP','SLOT_1','SLOT_2','moves']
+  csvfile=open('persons.csv','r', newline='')
+  obj=csv.reader(csvfile)
+  for row in obj:
+    print(row)
+# individual priniting   
+#   print('ID','NAME','DATA','HEIGHT','Weight','BASE_EXP','SLOT_1','SLOT_2','moves')
+  
+#   if(len(data['types'])==1 and data['types'][0]['slot']==2):
+#     print([data['id'],data['name'],data['order'],data['height'],data['weight'],data['base_experience'],data['types'][0]['type']['name'],'',len(data['moves']) ])
+# #   print("slot2", data['types'][0]['type']['name'])
+#   elif(len(data['types'])==1 and data['types'][0]['slot']==1):
+#     print([data['id'],data['name'],data['order'],data['height'],data['weight'],data['base_experience'],'',data['types'][0]['type']['name'],len(data['moves'])] )
+# #   print("slot1", data['types'][0]['type']['name'])
+#   else:
+#     print([data['id'],data['name'],data['order'],data['height'],data['weight'],data['base_experience'],data['types'][1]['type']['name'],data['types'][0]['type']['name'],len(data['moves'])])
+#   print("slot1", data['types'][1]['type']['name'])
+#   print("slot2", data['types'][0]['type']['name'])
+#   l1= list(data['moves'][0].keys())[0]
+  # print(data['moves'][0])
+#   print("num_of_moves", len(data['moves']))
+  
+  
+  print("\n")
+  
+
+
+
+
+  
+  
+
