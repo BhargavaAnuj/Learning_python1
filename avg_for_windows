@@ -1,0 +1,36 @@
+#code1
+
+try:
+  size= int(float(input().strip()))
+   
+  arr= [int(float(x)) for x in input().strip().split(",")]
+  print(arr)
+  
+  l= len(arr)
+  # if l != size:
+  #   print("array input is of incorrect size")
+  win_size= int(float(input().strip()))
+#   arr=[2.5,1,3,4,1,2,1,5,4]
+  
+#   l= len(arr)
+  if size >= win_size and l==size and l>0 and size >0 and win_size > 0:
+
+    avg_arr=[]
+
+    a=win_size-1
+
+    
+
+    for i in range(size-a):
+      
+     
+        
+        avg_arr.append(round(sum(arr[i:win_size+i])/win_size))
+    print(','.join(map(str, avg_arr)))
+
+  elif l != size or l==0:
+    print("array input is of incorrect size")
+  elif l < size:
+    print("the input array is less than win size")
+except exception as e:
+  print("check if null is inserted" , e)
