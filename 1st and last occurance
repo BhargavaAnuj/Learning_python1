@@ -1,0 +1,41 @@
+#code
+#find indexes of first and last occurrences of sorted array
+# use two loop , one from begining and one from end
+
+test= int(input().strip())
+
+for i in range(test):
+    size = int(input().strip())
+    arr=[int(k) for k in input().strip().split(' ')]
+    ele= int(input().strip())
+    
+    
+
+    
+    
+    def indexOfLastOne(arr, n):
+        # traverse the array from left to right 
+        for i in range(0, size):
+            # if true, then return i 
+            if (arr[i] == ele):
+                return i
+                # last=i
+        return -1    
+    def indexOfFirstOne(arr, n):
+        # traverse the array from left to right 
+        for i in range(n-1, -1, -1):
+            # if true, then return i 
+            if (arr[i] == ele):
+                return i
+                # first=i            
+        return -1
+            
+    indF=indexOfFirstOne(arr, size)
+    indL=indexOfLastOne(arr, size)
+    if indF== -1:
+        print(indF)
+    else:
+        print(indL, indF)
+    
+    
+    
