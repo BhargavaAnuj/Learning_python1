@@ -1,0 +1,23 @@
+# RUn the loop from reverse
+#code
+#[1, 0, 0, 0, 1]
+# 11101
+test= int(input().strip())
+# print(test)
+for i in range(test):
+    arr=[int(k) for k in input().strip()]
+    # print(arr)
+    n= len(arr)
+    
+    def indexOfFirstOne(arr, n):
+        # traverse the array from left to right 
+        for i in range(n-1, -1, -1):
+            # if true, then return i 
+            if (arr[i] == 1):
+                return i
+                # print(i)
+            
+        # 1's are not present in the array 
+        return -1
+    ind=indexOfFirstOne(arr, n)
+    print(ind)
